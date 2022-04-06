@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    function computerPlay() {
+      const choices = ['rock', 'paper', 'scissors'];
+      const choicesIndex = Math.floor(Math.random() * 3);
+
+      return choices[choicesIndex];
+    }
+
+    function playRound(playerSelection, computerSelection) {
+      if (playerSelection === computerSelection) {
+        return 'You tied'
+      } if (playerSelection === 'rock' && (computerSelection === 'paper' || computerSelection === 'scissors')){
+          if (computerSelection === 'paper') {
+            return 'You lose. Paper beats rock!';
+          } else {
+            return 'You win! Rock beats Scissors';
+          }
+      } if (playerSelection === 'paper' && (computerSelection === 'rock' || computerSelection === 'scissors')){
+          if (computerSelection === 'rock') {
+            return "You win! Paper beats rock";
+          } else {
+            return 'You lose. Scissors beats Paper';
+          }
+      } if (playerSelection === 'scissors' && (computerSelection === 'paper' || computerSelection === 'rock')){
+            if (computerSelection === 'paper') {
+              return 'You win! Scissors beats paper';
+            } else {
+              return 'You lose. Rock beats scissors';
+            }
+      }
+      }; // end playRound
+
+      const game = () => {
+        for (let i = 0; i < 5; i++){
+          // playRound 
+          // find winner out of 5 (first to 3)
+        }
+      }
+
+    const playerSelection = 'scissors';
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+
+
+
+
+  </script>
+</body>
+
+</html>
